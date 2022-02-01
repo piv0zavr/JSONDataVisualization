@@ -1,0 +1,66 @@
+﻿<UserControl xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"  xmlns:my="http://schemas.devexpress.com/winfx/2008/xaml/charts/rangecontrolclient" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui"
+             xmlns:lc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" 
+             xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Class="JSONDataVisualization.Views.HomeView" 
+             mc:Ignorable="d"
+             d:DesignHeight="738" d:DesignWidth="844">
+    <Grid>
+        <lc:LayoutControl Orientation="Horizontal" HorizontalAlignment="Stretch"  Margin="0,0,0,0" VerticalAlignment="Stretch" >
+            <lc:LayoutGroup Header="LayoutGroup" Orientation="Vertical" View="Group" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" >
+                <lc:LayoutGroup HorizontalAlignment="Stretch" Orientation="Vertical" View="GroupBox" Header="Выбор диапазона дат" IsCollapsible="True" IsCollapsed="False">
+                    <lc:LayoutGroup HorizontalAlignment="Stretch">
+                        <lc:LayoutItem HorizontalAlignment="Left">
+                            <Label Content="Дата начала:" HorizontalContentAlignment="Right" VerticalAlignment="Center" Height="25" Width="90" HorizontalAlignment="Right" Margin="0,0,0,0"/>
+                        </lc:LayoutItem >
+                        <lc:LayoutItem Height="25" HorizontalAlignment="Stretch">
+                            <dxe:DateEdit HorizontalAlignment="Stretch"/>
+                        </lc:LayoutItem>
+                    </lc:LayoutGroup>
+                    <lc:LayoutGroup HorizontalAlignment="Stretch">
+                        <lc:LayoutItem HorizontalAlignment="Left">
+                            <Label Content="Дата окончания:" HorizontalContentAlignment="Right" VerticalAlignment="Center" Height="25" Width="90" HorizontalAlignment="Stretch" Margin="0,0,0,0"/>
+                        </lc:LayoutItem>
+                        <lc:LayoutItem Height="25" HorizontalAlignment="Stretch">
+                            <dxe:DateEdit HorizontalAlignment="Stretch"/>
+                        </lc:LayoutItem>
+                    </lc:LayoutGroup>
+                </lc:LayoutGroup>
+                <lc:LayoutGroup View="GroupBox" Header="Получение данных" IsCollapsible="True" IsCollapsed="False">
+                    <lc:LayoutItem>
+                        <dx:SimpleButton Height="25" HorizontalAlignment="Stretch" MinWidth="100" Content="Получить данные"/>
+                    </lc:LayoutItem>
+                    <lc:LayoutItem>
+                        <dx:SimpleButton Height="25" HorizontalAlignment="Stretch" MinWidth="100" Content="Построить график"/>
+                    </lc:LayoutItem>
+                </lc:LayoutGroup>
+                <lc:LayoutGroup View="GroupBox" Header="Фильтрация данных" IsCollapsible="True" IsCollapsed="True">
+                    <lc:LayoutItem HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                        <dxg:GridControl MinHeight="300" MaxHeight="8000" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </lc:LayoutItem>
+                </lc:LayoutGroup>
+                <lc:LayoutGroup View="GroupBox" Header="Графики" IsCollapsible="True" IsCollapsed="True">
+                    <lc:LayoutItem HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <dxc:ChartControl >
+                            <dxc:ChartControl.Legends>
+                                <dxc:Legend HorizontalPosition="Right" ItemVisibilityMode="Default" VerticalPosition="Top" Visible="True">
+                                    <dxc:Legend.Title>
+                                        <dxc:LegendTitle Content="wqe" Visible="False"/>
+                                    </dxc:Legend.Title>
+                                </dxc:Legend>
+                            </dxc:ChartControl.Legends>
+                            <dxc:XYDiagram2D>
+                                <dxc:XYDiagram2D.SeriesTemplate>
+                                    <dxc:SplineSeries2D Visible="True"/>
+                                </dxc:XYDiagram2D.SeriesTemplate>
+                            </dxc:XYDiagram2D>
+                        </dxc:ChartControl>
+                    </lc:LayoutItem>
+                </lc:LayoutGroup>
+            </lc:LayoutGroup>
+        </lc:LayoutControl>
+    </Grid>
+</UserControl>
